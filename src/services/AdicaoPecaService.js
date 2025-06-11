@@ -12,7 +12,7 @@ class AdicaoPecaService {
         try {
             // Validar ID do serviço primeiro
             if (!routeId) {
-                throw new Error('ID do serviço na rota é obrigatório');
+                throw new Error('ID do serviço na rota é obrigatório!');
             }
 
             // Validar se o ID da rota é igual ao ID do corpo
