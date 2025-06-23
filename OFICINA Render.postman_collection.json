@@ -1,0 +1,1468 @@
+{
+	"info": {
+		"_postman_id": "8114bcc6-e63e-4591-ac11-4602d005a680",
+		"name": "OFICINA Render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43982295"
+	},
+	"item": [
+		{
+			"name": "DIEGO - Buscar Todas Abertura Servico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Buscar Abertura Servico ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/7",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"7"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Erro campo basico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"data\": \"2025-05-20\",\r\n  \"servicoId\": \"1\",\r\n  \"funcionarioId\": \"2\",\r\n  \"nomeCliente\": \"\",\r\n  \"cpfCliente\": \"060.325.145-96\",\r\n  \"veiculoId\": \"9\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO -  Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/10",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"10"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Criar Nova Ordem de servico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//Alterar a data para o dia atual\n{\n  \"data\": \"2025-05-23\",\n  \"servicoId\": \"10\",\n  \"funcionarioId\": \"10\",\n  \"nomeCliente\": \"Diego Ravani\",\n  \"cpfCliente\": \"060.325.145-96\",\n  \"veiculoId\": \"10\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO -  Regra 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// ALterar a data para o dia atual para testar a regra de négocio\n//Regra 01: limite de 10 ordens de serviços por dia\n{\n  \"data\": \"2025-05-23\",\n  \"servicoId\": \"6\",\n  \"funcionarioId\": \"10\",\n  \"nomeCliente\": \"Jonas\",\n  \"cpfCliente\": \"060.325.145-96\",\n  \"veiculoId\": \"7\"\n}\n\n// ALterar a data para o dia atual para testar a regra de négocio\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/8",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"8"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO -  Regra 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//Alterar a data para o dia atual do body para testar a regra de negócio 02\n//Regra de negócio 02: o funcionário pode estar atribuido a apenas uma ordem de serviço no mesmo dia\n{\n  \"data\": \"2025-05-23\",\n  \"servicoId\": 1,\n  \"funcionarioId\": 1,\n  \"nomeCliente\": \"João Silva\",\n  \"cpfCliente\": \"123.456.789-00\",\n  \"veiculoId\": 2\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO -  Atualizacao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": \"2025-05-20\",\n  \"veiculoId\": 2,\n  \"servicoId\": 2,\n  \"funcionarioId\": 2\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/7",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"7"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Relatorio_01 QTDE DE OS POR FUNCONARIO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/abertura-servico/relatorio/funcionarios?dataInicio=2025-05-01&dataFim=2025-06-31",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"abertura-servico",
+						"relatorio",
+						"funcionarios"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2025-05-01"
+						},
+						{
+							"key": "dataFim",
+							"value": "2025-06-31"
+						}
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "DIEGO - Relatorio_02 SERVICOS MAIS PRESTADOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/relatorio-servicos?dataInicio=2025-05-01&dataFim=2025-06-31",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"relatorio-servicos"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2025-05-01"
+						},
+						{
+							"key": "dataFim",
+							"value": "2025-06-31"
+						}
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Listar Funcionarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Listar Funcionarios por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Cria Funcionario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"cargo\": \"Mecânico Junior\",\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"telefone\": \"(28) 98765-4321\",\r\n  \"dataDeAdmissao\": \"2025-04-11\",\r\n  \"especialidade\": \"Funilaria\",\r\n  \"salario\": 5000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios/",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Cria Funcionario Erro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"cargo\": \"Mecânico Junior\",\r\n  \"cpf\": \"123.456.789-0\",\r\n  \"telefone\": \"(28) 98765-4321\",\r\n  \"dataDeAdmissao\": \"2025-04-11\",\r\n  \"especialidade\": \"Funilaria\",\r\n  \"salario\": 5000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios/",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Atualiza Funcionario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"João Silva Pereira\",\r\n    \"cargo\": \"Mecânico Sênior\",\r\n    \"cpf\": \"123.456.789-00\",\r\n    \"telefone\": \"(28) 98765-4321\",\r\n    \"dataDeAdmissao\": \"2025-04-11\",\r\n    \"especialidade\": \"Funilaria\",\r\n    \"salario\": 5000,\r\n    \"createdAt\": \"2025-04-24T14:17:26.212Z\",\r\n    \"updatedAt\": \"2025-04-24T14:17:26.212Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios/5",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Excluir Funcionario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/funcionarios/4",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"funcionarios",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Listar Veiculos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/veiculos",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Listar Veiculos por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/veiculos/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"veiculos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Cria Veiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Cria Veiculo Erro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"marca\": \"Ford\",\r\n    \"modelo\": \"Ka\",\r\n    \"ano\": 2015,\r\n    \"numeroChassi\": \"9BWZZZ377VT0\",\r\n    \"tipoCombustivel\": \"Gasolina\",\r\n    \"createdAt\": \"2025-04-24T02:01:39.679Z\",\r\n    \"updatedAt\": \"2025-04-24T02:01:39.679Z\",\r\n    \"clienteId\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/veiculos",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Atualiza Veiculo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"marca\": \"Ford\",\r\n    \"modelo\": \"Ka\",\r\n    \"ano\": 2012,\r\n    \"numeroChassi\": \"9BWZZZ377VT013029\",\r\n    \"tipoCombustivel\": \"Gás\",\r\n    \"createdAt\": \"2025-04-24T02:26:57.008Z\",\r\n    \"updatedAt\": \"2025-04-24T02:26:57.008Z\",\r\n    \"clienteId\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/veiculos/6",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"veiculos",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Excluir Veiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/veiculos/7",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"veiculos",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Listar Todas Execuções",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico"
+					]
+				},
+				"description": "Lista todas as execuções de serviço cadastradas no sistema, incluindo seus relacionamentos (forma de pagamento, abertura de serviço, etc)."
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Buscar Execução por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico",
+						"1"
+					]
+				},
+				"description": "Busca uma execução de serviço específica pelo seu ID, retornando todos os detalhes incluindo relacionamentos."
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Criar Nova Execução - Sem desconto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 150.50,\n    \"dataFinalizacao\": \"2024-03-20\",\n    \"formaPagamentoId\": 1,\n    \"aberturaServicoId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico"
+					]
+				},
+				"description": "Cria uma nova execução de serviço com os dados básicos. Este é um exemplo de criação simples sem ativar regras de negócio especiais."
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Criar Execução - Erro Validação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": \"invalido\",\n    \"dataFinalizacao\": \"data-invalida\",\n    \"formaPagamentoId\": \"nao-numerico\",\n    \"aberturaServicoId\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico"
+					]
+				},
+				"description": "Testa as validações básicas dos campos:\n- valor: deve ser número\n- dataFinalizacao: deve ser data válida\n- formaPagamentoId: deve ser número\n- aberturaServicoId: não pode ser nulo"
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Criar Execução - Teste Forma Pagamento (Regra de Negócio 1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 150.50,\n    \"dataFinalizacao\": \"2024-03-20\",\n    \"formaPagamentoId\": 999,\n    \"aberturaServicoId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico"
+					]
+				},
+				"description": "Testa a Regra de Negócio 1: Validação de Forma de Pagamento\n- Tenta criar uma execução com uma forma de pagamento inexistente (id: 999)\n- Deve retornar erro indicando que a forma de pagamento não foi encontrada"
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Criar Execução - Com Desconto (Regra de Negócio 2)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 200.00,\n    \"dataFinalizacao\": \"2024-03-20\",\n    \"formaPagamentoId\": 1,\n    \"aberturaServicoId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico"
+					]
+				},
+				"description": "Testa a Regra de Negócio 2: Desconto de Fidelidade\n- Cliente deve ter 2+ serviços no último mês para receber 10% de desconto\n- Resposta deve mostrar:\n  * valor: valor original (200.00)\n  * valorComDesconto: valor com 10% de desconto (180.00)"
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Atualizar Execução",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 180.00,\n    \"dataFinalizacao\": \"2024-03-25\",\n    \"formaPagamentoId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico",
+						"1"
+					]
+				},
+				"description": "Atualiza uma execução de serviço existente.\n- O desconto é recalculado se o valor ou a data forem alterados\n- Resposta mostra valor original e valor com desconto (se aplicável)"
+			},
+			"response": []
+		},
+		{
+			"name": "JOAO VICTOR - Excluir Execução",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/ExecucaoServico/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ExecucaoServico",
+						"1"
+					]
+				},
+				"description": "Remove uma execução de serviço do sistema. A operação falha se houver registros associados."
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Listar Todas Peças Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Listar Peças ID Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/pecas/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pecas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Adicionar peça Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"aberturaServicoId\": 1, // ID de uma ordem de serviço existente\r\n    \"pecaId\": 1, // ID de uma peça existente\r\n    \"estoque\": 1,\r\n    \"valor\": 75.50,\r\n    \"data\": \"2024-03-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Adicionar Peça Erro Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Atualizar Peças (ID) Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Filtro de arrrr\",\r\n  \"estoque\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/pecas/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pecas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Deletar Peça (ID) Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/pecas/:id",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pecas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Listar Todas Serviço Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servicos",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Listar Serviços ID Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servicos/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servicos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Adicionar serviço Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"descricao\": \"Serviço A\",\r\n    \"maoObra\": 50.0,\r\n    \"categoria\": \"A\"\r\n  },\r\n  {\r\n    \"descricao\": \"Serviço B\",\r\n    \"maoObra\": 75.5,\r\n    \"categoria\": \"B\"\r\n  },\r\n  {\r\n    \"descricao\": \"Serviço C\",\r\n    \"maoObra\": 40.25,\r\n    \"categoria\": \"C\"\r\n  },\r\n  {\r\n    \"descricao\": \"Serviço D\",\r\n    \"maoObra\": 55.75,\r\n    \"categoria\": \"A\"\r\n  },\r\n  {\r\n    \"descricao\": \"Serviço E\",\r\n    \"maoObra\": 60.0,\r\n    \"categoria\": \"B\"\r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servicos",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Adicionar Serviço Erro Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servicos",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Atualizar Serviço (ID) Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Filtro de arrrr\",\r\n  \"estoque\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servico/1",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servico",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Deletar Serviço (ID) Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/servicos/:id",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"servicos",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Regra 1 - Adicionar Peça (Funcionando) - Matheus Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"aberturaServicoId\": 1,\r\n    \"pecaId\": 1,           // ID da peça cadastrada\r\n    \"quantidade\": 2,\r\n    \"valor\": 150.50,\r\n    \"data\": \"2025-05-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/1/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"1",
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Regra 2 - Adicionar Peça (Funcionando) - Matheus Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"aberturaServicoId\": 9999,\r\n  \"quantidade\": 2,\r\n  \"valor\": 150,\r\n  \"data\": \"2025-05-25\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/2/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"2",
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Regra 2 - Adicionar Peça (Erro) - Matheus Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"aberturaServicoId\": 2,\r\n  \"quantidade\": 2,\r\n  \"valor\": 150,\r\n  \"data\": \"2025-08-30\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/2/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"2",
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Regra 1 - Adicionar Peça (Erro) - Matheus Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"aberturaServicoId\": 9999,\r\n  \"quantidade\": 2,\r\n  \"valor\": 150,\r\n  \"data\": \"2025-05-25\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/aberturaservico/2/pecas",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"aberturaservico",
+						"2",
+						"pecas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Total de Peças por periodo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/relatorios/pecas/total?dataInicio=2025-05-01&dataFim=2025-05-31",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"relatorios",
+						"pecas",
+						"total"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2025-05-01"
+						},
+						{
+							"key": "dataFim",
+							"value": "2025-05-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MATHEUS - Peças mais utilizadas por periodo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oficina-ifes-backend.onrender.com/relatorios/pecas/mais-utilizadas?dataInicio=2025-05-01&dataFim=2025-05-31",
+					"protocol": "https",
+					"host": [
+						"oficina-ifes-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"relatorios",
+						"pecas",
+						"mais-utilizadas"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2025-05-01"
+						},
+						{
+							"key": "dataFim",
+							"value": "2025-05-31"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Oficina - Painel Administrativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Painel da Oficina</h1>
+    <nav>
+        <button onclick="mostrarSecao('funcionarios')">Funcionários</button>
+        <button onclick="mostrarSecao('veiculos')">Veículos</button>
+        <button onclick="mostrarSecao('pecas')">Peças</button>
+        <button onclick="mostrarSecao('servicos')">Serviços</button>
+    </nav>
+
+    <!-- Funcionários -->
+    <section id="funcionarios" class="secao">
+        <h2>Funcionários</h2>
+        <button onclick="carregarFuncionarios()">Atualizar Lista</button>
+        <table id="tabela-funcionarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Especialidade</th>
+                    <th>Salário</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h3>Adicionar Funcionário</h3>
+        <form id="form-funcionario" onsubmit="adicionarFuncionario(event)">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="cargo" placeholder="Cargo" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="text" name="telefone" placeholder="Telefone" required>
+            <input type="text" name="especialidade" placeholder="Especialidade" required>
+            <input type="number" name="salario" placeholder="Salário" required>
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <!-- Veículos -->
+    <section id="veiculos" class="secao" style="display:none;">
+        <h2>Veículos</h2>
+        <button onclick="carregarVeiculos()">Atualizar Lista</button>
+        <table id="tabela-veiculos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Nº Chassi</th>
+                    <th>Combustível</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h3>Adicionar Veículo</h3>
+        <form id="form-veiculo" onsubmit="adicionarVeiculo(event)">
+            <input type="text" name="marca" placeholder="Marca" required>
+            <input type="text" name="modelo" placeholder="Modelo" required>
+            <input type="number" name="ano" placeholder="Ano" required>
+            <input type="text" name="numeroChassi" placeholder="Nº Chassi" required>
+            <input type="text" name="tipoCombustivel" placeholder="Combustível" required>
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <!-- Peças -->
+    <section id="pecas" class="secao" style="display:none;">
+        <h2>Peças</h2>
+        <button onclick="carregarPecas()">Atualizar Lista</button>
+        <table id="tabela-pecas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h3>Adicionar Peça</h3>
+        <form id="form-peca" onsubmit="adicionarPeca(event)">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="number" name="estoque" placeholder="Estoque" required>
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="secao" style="display:none;">
+        <h2>Serviços</h2>
+        <button onclick="carregarServicos()">Atualizar Lista</button>
+        <table id="tabela-servicos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Mão de Obra</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h3>Adicionar Serviço</h3>
+        <form id="form-servico" onsubmit="adicionarServico(event)">
+            <input type="text" name="descricao" placeholder="Descrição" required>
+            <input type="number" step="0.01" name="maoObra" placeholder="Mão de Obra" required>
+            <input type="text" name="categoria" placeholder="Categoria" required>
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
