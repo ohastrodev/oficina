@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Configuração do banco de dados no ambiente de teste
 /*export const databaseConfig = {
@@ -32,16 +34,13 @@ export const databaseConfig = {
 // Configuração do banco de dados no ambiente de produção
 export const databaseConfig = {
   dialect: 'postgres',
-  host: 'dpg-d14baj95pdvs73f0jrog-a.oregon-postgres.render.com',
-  username: 'oficina_ifes_backend_user',
-  password: 'Bzaqvzd6s4OwieinvRRG8JDhEgJPtW0n',
-  database: 'oficina_ifes_backend',
+  url: process.env.DATABASE_URL,
+  dialectOptions: {
+    ssl: { require: true, rejectUnauthorized: false }
+  },
   define: {
     timestamps: true,
     freezeTableName: true,
     underscored: true
-  },
-  dialectOptions: {
-    ssl: true
   }
 };

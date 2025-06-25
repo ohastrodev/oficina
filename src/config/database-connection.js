@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
-import { databaseConfig } from "./database-config.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 import { Cliente } from '../models/Cliente.js';
 import { FormaPagamento } from '../models/FormaPagamento.js';
@@ -11,7 +12,13 @@ import { Servico } from '../models/Servico.js';
 import { Peca } from '../models/Peca.js';
 import { AdicaoPeca } from '../models/AdicaoPeca.js';
 
-const sequelize = new Sequelize(databaseConfig);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: { require: true, rejectUnauthorized: false }
+  }
+});
 
 Cliente.init(sequelize);
 Veiculo.init(sequelize);

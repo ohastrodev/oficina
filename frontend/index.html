@@ -2,122 +2,311 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Oficina - Painel Administrativo</title>
+    <title>Oficina Mecânica - Painel Administrativo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Painel da Oficina</h1>
-    <nav>
-        <button onclick="mostrarSecao('funcionarios')">Funcionários</button>
-        <button onclick="mostrarSecao('veiculos')">Veículos</button>
-        <button onclick="mostrarSecao('pecas')">Peças</button>
-        <button onclick="mostrarSecao('servicos')">Serviços</button>
-    </nav>
-
-    <!-- Funcionários -->
-    <section id="funcionarios" class="secao">
-        <h2>Funcionários</h2>
-        <button onclick="carregarFuncionarios()">Atualizar Lista</button>
-        <table id="tabela-funcionarios">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Cargo</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Especialidade</th>
-                    <th>Salário</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <h3>Adicionar Funcionário</h3>
-        <form id="form-funcionario" onsubmit="adicionarFuncionario(event)">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="cargo" placeholder="Cargo" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="text" name="telefone" placeholder="Telefone" required>
-            <input type="text" name="especialidade" placeholder="Especialidade" required>
-            <input type="number" name="salario" placeholder="Salário" required>
-            <button type="submit">Adicionar</button>
-        </form>
-    </section>
-
-    <!-- Veículos -->
-    <section id="veiculos" class="secao" style="display:none;">
-        <h2>Veículos</h2>
-        <button onclick="carregarVeiculos()">Atualizar Lista</button>
-        <table id="tabela-veiculos">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Ano</th>
-                    <th>Nº Chassi</th>
-                    <th>Combustível</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <h3>Adicionar Veículo</h3>
-        <form id="form-veiculo" onsubmit="adicionarVeiculo(event)">
-            <input type="text" name="marca" placeholder="Marca" required>
-            <input type="text" name="modelo" placeholder="Modelo" required>
-            <input type="number" name="ano" placeholder="Ano" required>
-            <input type="text" name="numeroChassi" placeholder="Nº Chassi" required>
-            <input type="text" name="tipoCombustivel" placeholder="Combustível" required>
-            <button type="submit">Adicionar</button>
-        </form>
-    </section>
-
-    <!-- Peças -->
-    <section id="pecas" class="secao" style="display:none;">
-        <h2>Peças</h2>
-        <button onclick="carregarPecas()">Atualizar Lista</button>
-        <table id="tabela-pecas">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Estoque</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <h3>Adicionar Peça</h3>
-        <form id="form-peca" onsubmit="adicionarPeca(event)">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="number" name="estoque" placeholder="Estoque" required>
-            <button type="submit">Adicionar</button>
-        </form>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="secao" style="display:none;">
-        <h2>Serviços</h2>
-        <button onclick="carregarServicos()">Atualizar Lista</button>
-        <table id="tabela-servicos">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Descrição</th>
-                    <th>Mão de Obra</th>
-                    <th>Categoria</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <h3>Adicionar Serviço</h3>
-        <form id="form-servico" onsubmit="adicionarServico(event)">
-            <input type="text" name="descricao" placeholder="Descrição" required>
-            <input type="number" step="0.01" name="maoObra" placeholder="Mão de Obra" required>
-            <input type="text" name="categoria" placeholder="Categoria" required>
-            <button type="submit">Adicionar</button>
-        </form>
-    </section>
-
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Oficina Mecânica</span>
+        </div>
+        <nav class="top-nav">
+            <button onclick="mostrarSecao('funcionarios')"><i class="fa-solid fa-user-gear"></i> Funcionários</button>
+            <button onclick="mostrarSecao('veiculos')"><i class="fa-solid fa-car"></i> Veículos</button>
+            <button onclick="mostrarSecao('pecas')"><i class="fa-solid fa-cogs"></i> Peças</button>
+            <button onclick="mostrarSecao('servicos')"><i class="fa-solid fa-wrench"></i> Serviços</button>
+            <button onclick="mostrarSecao('relatorios')"><i class="fa-solid fa-chart-bar"></i> Relatórios</button>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa-solid fa-gears"></i> Processos <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="mostrarSecao('aberturaservico')">Abertura de OS</a>
+                    <a href="#" onclick="mostrarSecao('execucaoservico')">Execução de Serviço</a>
+                    <a href="#" onclick="mostrarSecao('adicaopeca')">Adição de Peça</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Funcionários -->
+        <section id="funcionarios" class="secao">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-user-gear"></i> Funcionários</h2>
+                <button class="add-btn" onclick="abrirModal('modal-funcionario')"><i class="fa-solid fa-plus"></i> Novo Funcionário</button>
+            </div>
+            <table id="tabela-funcionarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Especialidade</th>
+                        <th>Salário</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Veículos -->
+        <section id="veiculos" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-car"></i> Veículos</h2>
+                <button class="add-btn" onclick="abrirModal('modal-veiculo')"><i class="fa-solid fa-plus"></i> Novo Veículo</button>
+            </div>
+            <table id="tabela-veiculos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Ano</th>
+                        <th>Nº Chassi</th>
+                        <th>Combustível</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Peças -->
+        <section id="pecas" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-cogs"></i> Peças</h2>
+                <button class="add-btn" onclick="abrirModal('modal-peca')"><i class="fa-solid fa-plus"></i> Nova Peça</button>
+            </div>
+            <table id="tabela-pecas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Serviços -->
+        <section id="servicos" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-wrench"></i> Serviços</h2>
+                <button class="add-btn" onclick="abrirModal('modal-servico')"><i class="fa-solid fa-plus"></i> Novo Serviço</button>
+            </div>
+            <table id="tabela-servicos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Mão de Obra</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Processos: Abertura de Ordem de Serviço -->
+        <section id="aberturaservico" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-file-circle-plus"></i> Abertura de Ordem de Serviço</h2>
+                <button class="add-btn" onclick="abrirModalAberturaServicoNovo()"><i class="fa-solid fa-plus"></i> Nova Ordem</button>
+            </div>
+            <table id="tabela-aberturaservico">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Serviço</th>
+                        <th>Funcionário</th>
+                        <th>Cliente</th>
+                        <th>CPF Cliente</th>
+                        <th>Veículo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Processos: Execução de Serviço -->
+        <section id="execucaoservico" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-clipboard-check"></i> Execução de Serviço</h2>
+                <button class="add-btn" onclick="abrirModal('modal-execucaoservico')"><i class="fa-solid fa-plus"></i> Nova Execução</button>
+            </div>
+            <table id="tabela-execucaoservico">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Valor</th>
+                        <th>Data Finalização</th>
+                        <th>Forma Pagamento</th>
+                        <th>Ordem de Serviço</th>
+                        <th>Desconto</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Processos: Adição de Peça -->
+        <section id="adicaopeca" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-screwdriver"></i> Adição de Peça</h2>
+                <button class="add-btn" onclick="abrirModalAdicaoPecaNovo()"><i class="fa-solid fa-plus"></i> Adicionar Peça</button>
+            </div>
+            <table id="tabela-adicaopeca">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ordem de Serviço</th>
+                        <th>Peça</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <!-- Nova Seção: Relatórios -->
+        <section id="relatorios" class="secao" style="display:none;">
+            <div class="secao-header">
+                <h2><i class="fa-solid fa-chart-bar"></i> Relatórios</h2>
+                <div class="relatorio-abas">
+                    <button onclick="selecionarAbaRelatorio('os-periodo')" id="aba-os-periodo" class="aba-relatorio aba-ativa">Ordens de Serviço</button>
+                    <button onclick="selecionarAbaRelatorio('desempenho-funcionarios')" id="aba-desempenho-funcionarios" class="aba-relatorio">Desempenho Funcionários</button>
+                    <button onclick="selecionarAbaRelatorio('total-pecas')" id="aba-total-pecas" class="aba-relatorio">Total de Peças</button>
+                    <button onclick="selecionarAbaRelatorio('pecas-mais-utilizadas')" id="aba-pecas-mais-utilizadas" class="aba-relatorio">Peças Mais Utilizadas</button>
+                    <button onclick="selecionarAbaRelatorio('os-funcionario')" id="aba-os-funcionario" class="aba-relatorio">Ordens por Funcionário</button>
+                    <button onclick="selecionarAbaRelatorio('servicos-mais-prestados')" id="aba-servicos-mais-prestados" class="aba-relatorio">Serviços Mais Prestados</button>
+                </div>
+            </div>
+            <div id="filtros-relatorio" style="margin: 20px 0;">
+                <label>Data Início: <input type="date" id="data-inicio-relatorio"></label>
+                <label>Data Fim: <input type="date" id="data-fim-relatorio"></label>
+                <button onclick="buscarRelatorioAtivo()">Buscar</button>
+            </div>
+            <div id="conteudo-relatorio">
+                <!-- Tabelas dos relatórios serão inseridas aqui via JS -->
+            </div>
+            <div id="grafico-relatorio-container" style="width:100%;max-width:900px;margin:0 auto 20px auto;display:none;">
+                <canvas id="grafico-relatorio"></canvas>
+            </div>
+        </section>
+    </main>
+    <!-- Modais -->
+    <div id="modal-funcionario" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-funcionario')">&times;</span>
+            <h3 id="titulo-modal-funcionario">Novo Funcionário</h3>
+            <form id="form-funcionario" onsubmit="salvarFuncionario(event)">
+                <input type="hidden" name="id">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="cargo" placeholder="Cargo" required>
+                <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="text" name="telefone" placeholder="Telefone" required>
+                <input type="text" name="especialidade" placeholder="Especialidade" required>
+                <input type="number" name="salario" placeholder="Salário" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-veiculo" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-veiculo')">&times;</span>
+            <h3 id="titulo-modal-veiculo">Novo Veículo</h3>
+            <form id="form-veiculo" onsubmit="salvarVeiculo(event)">
+                <input type="hidden" name="id">
+                <input type="text" name="marca" placeholder="Marca" required>
+                <input type="text" name="modelo" placeholder="Modelo" required>
+                <input type="number" name="ano" placeholder="Ano" required>
+                <input type="text" name="numeroChassi" placeholder="Nº Chassi" required>
+                <input type="text" name="tipoCombustivel" placeholder="Combustível" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-peca" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-peca')">&times;</span>
+            <h3 id="titulo-modal-peca">Nova Peça</h3>
+            <form id="form-peca" onsubmit="salvarPeca(event)">
+                <input type="hidden" name="id">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="number" name="estoque" placeholder="Estoque" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-servico" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-servico')">&times;</span>
+            <h3 id="titulo-modal-servico">Novo Serviço</h3>
+            <form id="form-servico" onsubmit="salvarServico(event)">
+                <input type="hidden" name="id">
+                <input type="text" name="descricao" placeholder="Descrição" required>
+                <input type="number" step="0.01" name="maoObra" placeholder="Mão de Obra" required>
+                <input type="text" name="categoria" placeholder="Categoria" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-aberturaservico" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-aberturaservico')">&times;</span>
+            <h3 id="titulo-modal-aberturaservico">Nova Ordem de Serviço</h3>
+            <form id="form-aberturaservico" onsubmit="salvarAberturaServico(event)">
+                <input type="hidden" name="id">
+                <input type="date" name="data" required>
+                <select name="servicoId" required></select>
+                <select name="funcionarioId" required></select>
+                <input type="text" name="nomeCliente" placeholder="Nome do Cliente" required>
+                <input type="text" name="cpfCliente" placeholder="CPF do Cliente" required>
+                <select name="veiculoId" required></select>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-execucaoservico" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-execucaoservico')">&times;</span>
+            <h3 id="titulo-modal-execucaoservico">Nova Execução de Serviço</h3>
+            <form id="form-execucaoservico" onsubmit="salvarExecucaoServico(event)">
+                <input type="hidden" name="id">
+                <input type="number" name="valor" placeholder="Valor" required step="0.01">
+                <span id="desconto-execucao" style="color: #FFD600; font-weight: bold; display: block; margin-bottom: 8px;"></span>
+                <input type="date" name="dataFinalizacao" required>
+                <select name="formaPagamentoId" required></select>
+                <select name="aberturaServicoId" required></select>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-adicaopeca" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-adicaopeca')">&times;</span>
+            <h3 id="titulo-modal-adicaopeca">Adicionar Peça</h3>
+            <form id="form-adicaopeca" onsubmit="salvarAdicaoPeca(event)">
+                <input type="hidden" name="id">
+                <select name="aberturaServicoId" required></select>
+                <select name="pecaId" required></select>
+                <input type="number" name="quantidade" placeholder="Quantidade" required>
+                <input type="number" name="valor" placeholder="Valor" required>
+                <input type="date" name="data" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <footer>
+        <span>© 2024 Oficina Mecânica. Todos os direitos reservados.</span>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

@@ -13,4 +13,13 @@ app.use(express.json());
 app.use(routes);
 app.use(errorHandler); // Manipulador de erro global (error handler)
 
-app.listen(3333);
+const PORT = process.env.PORT || 3333;
+import path from 'path';
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'frontend')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});

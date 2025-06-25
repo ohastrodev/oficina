@@ -6,7 +6,7 @@ import { QueryTypes } from 'sequelize';
 
 class AdicaoPecaService {
     static async adicionarPeca(req) {
-        const { aberturaServicoId: bodyId, quantidade, valor, data } = req.body;
+        const { aberturaServicoId: bodyId, quantidade, valor, data, pecaId } = req.body;
         const routeId = req.params.id;
 
         try {
@@ -59,7 +59,8 @@ class AdicaoPecaService {
                     abertura_servico_id: aberturaServicoId,
                     quantidade,
                     valor,
-                    data
+                    data,
+                    peca_id: pecaId
                 }, { transaction: t });
 
                 await t.commit();

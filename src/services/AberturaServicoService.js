@@ -14,7 +14,13 @@ class AberturaServicoService {
         { all: true, nested: true },
         {
           model: AdicaoPeca,
-          as: 'pecas'
+          as: 'pecas',
+          include: [
+            {
+              model: sequelize.models.Peca,
+              as: 'peca'
+            }
+          ]
         }
       ]
     });

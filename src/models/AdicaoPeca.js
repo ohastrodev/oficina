@@ -25,6 +25,11 @@ class AdicaoPeca extends Model {
         validate: {
           isDate: { msg: "A data deve ser preenchida no formato AAAA-MM-DD!" }
         }
+      },
+      peca_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: { model: 'pecas', key: 'id' }
       }
     }, { sequelize, modelName: 'AdicaoPeca', tableName: 'adicao_pecas' })
   }
@@ -33,6 +38,10 @@ class AdicaoPeca extends Model {
     this.belongsTo(models.AberturaServico, {
       foreignKey: 'abertura_servico_id',
       as: 'ordemServico'
+    });
+    this.belongsTo(models.Peca, {
+      foreignKey: 'peca_id',
+      as: 'peca'
     });
   }
 }
