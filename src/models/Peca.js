@@ -29,7 +29,7 @@ class Peca extends Model {
           isInt: { msg: "O estoque da peça deve ser um número inteiro!" }
         }
       }
-    }, { sequelize, modelName: 'peca', tableName: 'pecas' })
+    }, { sequelize, modelName: 'Peca', tableName: 'pecas' })
   }
 
   static associate(models) {
