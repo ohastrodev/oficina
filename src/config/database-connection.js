@@ -1,6 +1,4 @@
 import Sequelize from 'sequelize';
-import dotenv from 'dotenv';
-dotenv.config();
 
 import { Cliente } from '../models/Cliente.js';
 import { FormaPagamento } from '../models/FormaPagamento.js';
@@ -12,9 +10,9 @@ import { Servico } from '../models/Servico.js';
 import { Peca } from '../models/Peca.js';
 import { AdicaoPeca } from '../models/AdicaoPeca.js';
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize('oficina_ifes_backend', 'oficina_ifes_backend_user', 'Bzaqvzd6s4OwieinvRRG8JDhEgJPtW0n', {
+  host: 'dpg-d14baj95pdvs73f0jrog-a.oregon-postgres.render.com',
   dialect: 'postgres',
-  protocol: 'postgres',
   dialectOptions: {
     ssl: { require: true, rejectUnauthorized: false }
   }
